@@ -20,7 +20,7 @@ export default function AppSidebar() {
   const [openGroups, setOpenGroups] = useState<Record<string, boolean>>({});
 
   const toggleGroup = (label: string) => {
-    // 사이드바 닫혀있으면 그룹 토글 금지
+    // 사이드바 닫혀있으면 그룹 토글 금지 test
     if (!open) return;
 
     setOpenGroups((prev) => ({
