@@ -1,0 +1,31 @@
+.markdoc_container {
+  @apply pb-[120px];
+}
+.markdoc_container h3 {
+  @apply font-['Poppins'] font-medium text-[18px] pt-[34px] pb-[8px];
+}
+.markdoc_container pre {
+  @apply bg-[#121212] p-[24px] rounded-2xl overflow-x-auto;
+}
+.markdoc_container table {
+  border-collapse: collapse;
+  margin: 10px 0;
+  overflow-x: auto;
+  width: 100%;
+}
+.markdoc_container table tr {
+  border-top: 1px solid #eee;
+  transition: background-color 0.5s;
+}
+.markdoc_container table th {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 600;
+  background-color: #eee;
+  padding: 0.5em 0.5em 0.5em;
+}
+.markdoc_container table td {
+  text-align: left;
+  font-size: 14px;
+  padding: 0.5em 0.5em 0.5em;
+}
