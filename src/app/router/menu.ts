@@ -25,8 +25,8 @@ export const menuGroups = [
     label: "공통",
     icon: Home,
     items: [
-      { label: "대시보드", path: "/dashboard", icon: Home },
-      { label: "공지사항", path: "/notice", icon: Bell },
+      { label: "대시보드", path: "/common/dashboard", icon: Home },
+      { label: "공지사항", path: "/common/notice", icon: Bell },
     ],
   },
   {
@@ -49,8 +49,70 @@ export const menuGroups = [
   },
 ];
 
+export interface RouteMeta {
+  label: string;
+  parent?: string;
+}
+
+export const routeMetaMap: Record<string, RouteMeta> = {
+  /* ================= 공통 ================= */
+  "/common/dashboard": {
+    label: "대시보드",
+  },
+
+  "/common/notice": {
+    label: "공지사항",
+  },
+  "/common/notice/new": {
+    label: "공지사항 등록",
+    parent: "/common/notice",
+  },
+  "/common/notice/edit": {
+    label: "공지사항 수정",
+    parent: "/common/notice",
+  },
+
+  /* ================= 시스템 관리 ================= */
+  "/system/menu": {
+    label: "메뉴 관리",
+  },
+  "/system/menu/new": {
+    label: "메뉴 등록",
+    parent: "/system/menu",
+  },
+  "/system/menu/edit": {
+    label: "메뉴 수정",
+    parent: "/system/menu",
+  },
+
+  "/system/user": {
+    label: "사용자 관리",
+  },
+  "/system/user/new": {
+    label: "사용자 등록",
+    parent: "/system/user",
+  },
+  "/system/user/edit": {
+    label: "사용자 수정",
+    parent: "/system/user",
+  },
+
+  /* ================= 컴포넌트 ================= */
+  "/button": { label: "Button" },
+  "/input": { label: "Input" },
+  "/table": { label: "Table" },
+  "/alert": { label: "Alert" },
+};
+
 export function getMenuLabelByPath(pathname: string) {
-  return menuGroups
-    .flatMap((group) => group.items)
-    .find((item) => item.path === pathname)?.label;
+  const crumbs: RouteMeta[] = [];
+
+  let current: any = routeMetaMap[pathname];
+
+  while (current) {
+    crumbs.unshift(current);
+    current = current.parent ? routeMetaMap[current.parent] : undefined;
+  }
+
+  return crumbs;
 }

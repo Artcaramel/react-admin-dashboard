@@ -17,14 +17,14 @@ export default function MainLayout() {
         <div className="flex flex-col flex-1">
           <header className="flex items-center gap-3 p-5">
             <h2 className="text-xl font-semibold">React LKH Framework</h2>
-            {currentLabel && (
-              <>
+            {currentLabel.map((crumb, idx) => (
+              <span key={idx} className="flex items-center gap-2">
                 <ChevronRight className="h-4 w-4 text-muted-foreground" />
                 <span className="text-sm font-medium text-muted-foreground">
-                  {currentLabel}
+                  {crumb.label}
                 </span>
-              </>
-            )}
+              </span>
+            ))}
           </header>
           <div className="border-b mx-5" />
           <main className="flex-1 p-5">
