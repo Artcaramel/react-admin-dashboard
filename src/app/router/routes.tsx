@@ -5,6 +5,8 @@ import { ButtonView } from "@/documents/elements/ButtonView";
 import { TableView } from "@/documents/elements/TableView";
 import { AlertView } from "@/documents/elements/AlertView";
 import { InputView } from "@/documents/elements/InputView";
+import { SelectView } from "@/documents/elements/SelectView";
+import { DataGridView } from "@/documents/elements/DataGridView";
 import { MenuAdminPage } from "@/pages/system/MenuAdminPage";
 import { DashBoardPage } from "@/pages/common/DashBoardPage";
 import { NoticePage } from "@/pages/common/notice/NoticePage";
@@ -40,6 +42,8 @@ export function AppRoutes() {
         <Route path="/table" element={<TableView />} />
         <Route path="/alert" element={<AlertView />} />
         <Route path="/input" element={<InputView />} />
+        <Route path="/select" element={<SelectView />} />
+        <Route path="/datagrid" element={<DataGridView />} />
       </Route>
 
       <Route path="*" element={<Navigate to="/" replace />} />

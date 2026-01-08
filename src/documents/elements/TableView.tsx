@@ -3,19 +3,19 @@ import type { ColumnDef } from "@tanstack/react-table";
 import { useEffect, useState } from "react";
 
 type TestUser = {
-  id: number;
+  no: number;
   name: string;
   email: string;
 };
 
 const testData: TestUser[] = [
   {
-    id: 1,
+    no: 1,
     name: "홍길동",
     email: "hong@test.com",
   },
   {
-    id: 2,
+    no: 2,
     name: "임꺽정",
     email: "Eim@test.com",
   },
@@ -23,10 +23,10 @@ const testData: TestUser[] = [
 
 const testColumns: ColumnDef<TestUser>[] = [
   {
-    accessorKey: "id",
-    header: "ID",
+    accessorKey: "no",
+    header: "No",
     cell: ({ row }) => (
-      <span className="text-muted-foreground">{row.original.id}</span>
+      <span className="text-muted-foreground">{row.original.no}</span>
     ),
   },
   {

@@ -9,6 +9,7 @@ import {
   Users,
   Shield,
   Layers,
+  Grid3x3
 } from "lucide-react";
 
 // export const menuItems = [
@@ -45,6 +46,8 @@ export const menuGroups = [
       { label: "Input", path: "/input", icon: ChevronsLeftRightEllipsis },
       { label: "Table", path: "/table", icon: Table },
       { label: "Alert", path: "/alert", icon: CircleAlert },
+      { label: "Select", path: "/select", icon: ChevronsLeftRightEllipsis },
+      { label: "DataGrid", path: "/datagrid", icon: Grid3x3 },
     ],
   },
 ];
@@ -102,6 +105,9 @@ export const routeMetaMap: Record<string, RouteMeta> = {
   "/input": { label: "Input" },
   "/table": { label: "Table" },
   "/alert": { label: "Alert" },
+  "/select": { label: "Select" },
+  "/datagrid": { label: "DataGrid" },
+
 };
 
 export function getMenuLabelByPath(pathname: string) {
